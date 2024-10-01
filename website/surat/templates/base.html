@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Custom CSS to ensure the footer sticks to the bottom */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .content {
+      flex: 1;
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  {% include 'components/header.html' %}
+
+  <div class="content">
+    <!-- Hero Section -->
+    <header class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="display-4">Suratin</h1>
+        <p class="lead">Menyederhanakan Persuratan untuk Anda!</p>
+        <a href="{% url 'about' %}" class="btn btn-primary">Pelajari lebih lanjut</a>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 text-center">
+      <div class="container">
+        <h2 class="mb-4">Pelayanan Kami</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Dokumentasi Cepat</h5>
+                <p class="card-text">Kami menyediakan layanan dokumentasi yang cepat dan efisien, memastikan bahwa setiap kebutuhan administrasi Anda diproses dengan cepat.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Kemudahan Akses</h5>
+                <p class="card-text">Dengan sistem kami, Anda dapat mengakses dan mengelola dokumen Anda kapan saja dan di mana saja dengan mudah melalui platform online kami.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Dukungan Pelanggan</h5>
+                <p class="card-text">Tim dukungan kami siap membantu Anda dengan pertanyaan atau masalah yang mungkin Anda hadapi, memberikan solusi yang cepat dan memuaskan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    {% include 'components/footer.html' %}
+  </footer>
+</body>
+</html>
