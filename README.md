@@ -7,4 +7,6 @@ Posttest 2
 
 Posttest 3
 ![code](https://github.com/user-attachments/assets/76385a52-4f1a-4f3d-b6b0-0d9a504886d5)
+Fungsi: Otomatis membuat akun saat menambahkan data baru
+
 ![Screenshot 2024-10-01 at 22 01 56](https://github.com/user-attachments/assets/32eb1d8a-e157-4bb2-a96f-6ec9c46acbe0)
