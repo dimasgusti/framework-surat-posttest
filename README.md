@@ -10,3 +10,10 @@ Posttest 3
 Fungsi: Otomatis membuat akun saat menambahkan data baru
 
 ![Screenshot 2024-10-01 at 22 01 56](https://github.com/user-attachments/assets/32eb1d8a-e157-4bb2-a96f-6ec9c46acbe0)
+
+Posttest 4
+![Screenshot 2024-10-15 at 13 48 26](https://github.com/user-attachments/assets/2b5937b7-add3-4516-95d8-cf64735d1927)
+
+![Screenshot 2024-10-15 at 13 48 23](https://github.com/user-attachments/assets/030895df-54f8-49c1-91da-27c7529090e5)
+
+![Screenshot 2024-10-15 at 13 53 16](https://github.com/user-attachments/assets/6dedb303-d5d5-41b7-b0d2-a2a53853b553)
