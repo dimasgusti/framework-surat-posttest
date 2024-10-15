@@ -1,0 +1,63 @@
+{% csrf_token %}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="mb-3">
+    <label for="id_judul" class="form-label">Judul</label>
+    <input 
+        type="text" 
+        class="form-control" 
+        id="id_judul" 
+        name="judul" 
+        value="{{ form.judul.value|default_if_none:'' }}"  
+        required 
+    >
+    <div class="invalid-feedback">
+        {{ form.judul.errors }}
+    </div>
+</div>
+<div class="mb-3">
+    <label for="id_pesan" class="form-label">Pesan</label>
+    <input 
+        type="text" 
+        class="form-control" 
+        id="id_pesan" 
+        name="pesan" 
+        value="{{ form.pesan.value|default_if_none:'' }}"  
+        required 
+    >
+    <div class="invalid-feedback">
+        {{ form.pesan.errors }}
+    </div>
+</div>
+<div class="mb-3">
+    <label for="id_tanggal" class="form-label">Tanggal</label>
+    <input 
+        type="date" 
+        class="form-control" 
+        id="id_tanggal" 
+        name="tanggal" 
+        value="{{ form.tanggal.value|default_if_none:'' }}"  
+        required 
+    >
+    <div class="invalid-feedback">
+        {{ form.tanggal.errors }}
+    </div>
+</div>
+<div class="mb-3">
+    <label for="pengirim" class="form-label">Pengirim</label>
+    <input 
+        type="text" 
+        class="form-control" 
+        id="id_pengirim" 
+        name="pengirim" 
+        value="{{ form.pengirim.value|default_if_none:'' }}"  
+        required 
+    >
+    <div class="invalid-feedback">
+        {{ form.pengirim.errors }}
+    </div>
+</div>
+<button type="submit" class="btn btn-primary">
+    Save
+</button>

@@ -1,0 +1,83 @@
+{% load static %}
+{% include 'components/header.html' %}
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="icon" href="{% static 'images/Logo.png' %}" />
+
+<div class="container mt-4">
+  <!-- Alert messages block -->
+  {% if messages %}
+    <div>
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Main content block -->
+  {% block content %}
+    <div class="container my-4">
+      <h1 class="mb-4">Letter List</h1>
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Judul</th>
+            <th>Pesan</th>
+            <th>Tanggal</th>
+            <th>Pengirim</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for letter in letters %}
+            <tr>
+              <td>{{ letter.judul }}</td>
+              <td>{{ letter.pesan }}</td>
+              <td>{{ letter.tanggal }}</td>
+              <td>{{ letter.pengirim }}</td>
+              <td>
+                <a href="{% url 'letter_update' letter.id %}" class="btn btn-sm btn-warning">Update</a>
+                <button class="btn btn-sm btn-danger" onclick="confirmDelete({{ letter.id }})">Delete</button>
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="4" class="text-center">Tidak ada data</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{% url 'letter_create' %}" class="btn btn-primary mb-3">Create Letter</a>
+    </div>
+  {% endblock %}
+</div>
+
+<footer>
+  {% include 'components/footer.html' %}
+</footer>
+
+<script>
+    function confirmDelete(letterId) {
+        if (confirm('Are you sure you want to delete this letter?')) {
+            fetch(`/letter/delete/${letterId}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Letter deleted successfully!');
+                    location.reload();
+                } else {
+                    alert('Error: Could not delete the letter.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    }
+</script>
